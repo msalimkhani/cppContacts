@@ -1,6 +1,36 @@
-#include "../libs/lib.h"
-#include "../libs/contacts.h"
-#include "../libs/console.h"
+#include <iostream>
+#include <string>
+#include <iomanip>
+#if __has_include("<conio.h>")
+#include <conio.h>
+#endif
+#define SIZE 20
+/**
+ * Error Codes:
+*/
+#define EXT_ERR_COLOR_INVALID 1
+
+using namespace std;
+typedef struct _contacts
+{
+    string f_name;
+    string l_name;
+    int phone = 0;
+} Contact;
+Contact *l_Contacts = NULL;
+typedef enum {Default ,Black, Red, Green} Color;
+
+void delete_contact();
+void search_contact();
+int search_empty_slot();
+void show_contacts();
+void add_contact(int i);
+void edit_contact();
+int menu();
+void allocateContacts();
+void freeContacts();
+void printMessage(string msg, Color color, int newLine);
+string parseColor(Color color);
 int main()
 {
     allocateContacts();
@@ -57,7 +87,7 @@ void allocateContacts()
     {
         l_Contacts = (Contact *) malloc(sizeof(Contact) * SIZE);
     }
-
+    
 }
 void freeContacts()
 {
@@ -178,4 +208,33 @@ int menu()
     cout << "Please Select: ";
     cin >> choice;
     return choice;
+}
+string parseColor(Color color)
+{
+    switch (color)
+    {
+    case Default:
+        return "[0m";
+    case Black:
+        return "[30m";
+    case Red:
+        return "[31m";
+    case Green:
+        return "[32m";
+    default:
+        fprintf(stderr, "Couldn't parse Color Code!\n");
+        exit(EXT_ERR_COLOR_INVALID);
+    }
+}
+void printMessage(string msg, Color color, int newLine)
+{
+    if(!color)
+    {
+        cerr << "\033" << parseColor(Red) << "error: printMessage: Except Color Code Arg.\033" << parseColor(Default) << endl;
+    }
+    if(newLine == 1)
+    {
+        cout << "\033" << parseColor(color) << msg << "\033" << parseColor(Default) << endl;
+    }
+    cout << "\033" << parseColor(color) << msg << "\033" << parseColor(Default);
 }
