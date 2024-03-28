@@ -2,5 +2,12 @@
     "files.associations": {
         "iomanip": "cpp",
         "string": "cpp"
-    }
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/mahdi/cppContacts/bin",
+            "binaryPath": "/home/mahdi/cppContacts/bin/out",
+            "binaryArgs": []
+        }
+    ]
 }
