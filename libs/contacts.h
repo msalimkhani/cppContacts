@@ -2,10 +2,11 @@
 
 #ifndef CONTACTS_H
 #define CONTACTS_H
-struct tell
+typedef struct _contacts
 {
     string f_name;
     string l_name;
     int phone = 0;
-} Contacts[size];
+} Contacts;
+Contacts l_Contacts[SIZE];
 #endif

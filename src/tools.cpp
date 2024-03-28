@@ -1,18 +1,20 @@
 #include "../libs/lib.h"
 #include "../libs/contacts.h"
 
+
+
 void delete_contact()
 {
     system("cls");
     int temp, test = 1;
     cout << "Please enter the phone number: ";
     cin >> temp;
-    for (int i = 0; i < size && test; i++)
+    for (int i = 0; i < SIZE && test; i++)
     {
-        if (Contacts[i].phone == temp)
+        if (l_Contacts[i].phone == temp)
         {
             test = 0;
-            Contacts[i].phone = 0;
+            l_Contacts[i].phone = 0;
             cout << "Contact deleted." << endl;
         }
     }
@@ -27,12 +29,12 @@ void search_contact()
     int temp, test = 1;
     cout << "Please enter the phone number: ";
     cin >> temp;
-    for (int i = 0; i < size && test; i++)
+    for (int i = 0; i < SIZE && test; i++)
     {
-        if (Contacts[i].phone == temp)
+        if (l_Contacts[i].phone == temp)
         {
             test = 0;
-            cout << left << setw(20) << Contacts[i].f_name << setw(20) << Contacts[i].l_name << setw(20) << Contacts[i].phone << endl;
+            cout << left << setw(20) << l_Contacts[i].f_name << setw(20) << l_Contacts[i].l_name << setw(20) << l_Contacts[i].phone << endl;
         }
     }
     if (test == 1)
@@ -42,8 +44,8 @@ void search_contact()
 
 int search_empty_slot()
 {
-    for (int i = 0; i < size; i++)
-        if (Contacts[i].phone == 0)
+    for (int i = 0; i < SIZE; i++)
+        if (l_Contacts[i].phone == 0)
             return i;
 
     return -1;
@@ -54,10 +56,10 @@ void show_contacts()
     system("cls");
     cout << left << setw(20) << "First Name" << setw(20) << "Last Name" << setw(20) << "Phone" << endl;
     cout << "**********" << endl;
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < SIZE; i++)
     {
-        if (Contacts[i].phone != 0)
-            cout << left << setw(20) << Contacts[i].f_name << setw(20) << Contacts[i].l_name << setw(20) << Contacts[i].phone << endl;
+        if (l_Contacts[i].phone != 0)
+            cout << left << setw(20) << l_Contacts[i].f_name << setw(20) << l_Contacts[i].l_name << setw(20) << l_Contacts[i].phone << endl;
     }
     system("pause");
 }
@@ -67,13 +69,13 @@ void add_contact(int i)
     system("cls");
     cin.ignore();
     cout << "Please enter the first name: ";
-    getline(cin, Contacts[i].f_name);
+    getline(cin, l_Contacts[i].f_name);
 
     cout << "Please enter the last name: ";
-    getline(cin, Contacts[i].l_name);
+    getline(cin, l_Contacts[i].l_name);
 
     cout << "Please enter the phone number: ";
-    cin >> Contacts[i].phone;
+    cin >> l_Contacts[i].phone;
 }
 
 void edit_contact()
@@ -82,9 +84,9 @@ void edit_contact()
     int temp, test = 1;
     cout << "Please enter the phone number of the contact you want to edit: ";
     cin >> temp;
-    for (int i = 0; i < size && test; i++)
+    for (int i = 0; i < SIZE && test; i++)
     {
-        if (Contacts[i].phone == temp)
+        if (l_Contacts[i].phone == temp)
         {
             test = 0;
             cout << "Contact found. Please update the information:" << endl;

@@ -6,6 +6,6 @@
 #if __has_include("<conio.h>")
 #include <conio.h>
 #endif
-#define size 20
+#define SIZE 20
 using namespace std;
 #endif

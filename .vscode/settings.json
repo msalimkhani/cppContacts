@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "iomanip": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "iostream": "cpp"
     },
     "makefile.launchConfigurations": [
         {

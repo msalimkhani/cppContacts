@@ -3,8 +3,6 @@
 #define LIB_H
 #include "../libs/shared.h"
 
-
-
 void delete_contact();
 void search_contact();
 int search_empty_slot();
