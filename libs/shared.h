@@ -7,5 +7,11 @@
 #include <conio.h>
 #endif
 #define SIZE 20
+
+/**
+ * Error Codes:
+*/
+#define EXT_ERR_COLOR_INVALID 1
+
 using namespace std;
 #endif

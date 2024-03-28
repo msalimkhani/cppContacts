@@ -1,5 +1,6 @@
 #include "../libs/lib.h"
 #include "../libs/contacts.h"
+#include "../libs/console.h"
 
 void allocateContacts()
 {
@@ -15,7 +16,7 @@ void freeContacts()
 }
 void delete_contact()
 {
-    system("cls");
+    system("clear");
     int temp, test = 1;
     cout << "Please enter the phone number: ";
     cin >> temp;
@@ -25,7 +26,7 @@ void delete_contact()
         {
             test = 0;
             l_Contacts[i].phone = 0;
-            cout << "Contact deleted." << endl;
+            printMessage("Contact deleted.", Green, 1);
         }
     }
     if (test == 1)
@@ -116,7 +117,8 @@ void edit_contact()
 int menu()
 {
     int choice;
-    system("cls");
+    system("clear");
+    cout << endl;
     cout << "1) Add Contact" << endl;
     cout << "2) Delete Contact" << endl;
     cout << "3) Show Contacts" << endl;
