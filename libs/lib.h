@@ -10,4 +10,6 @@ void show_contacts();
 void add_contact(int i);
 void edit_contact();
 int menu();
+void allocateContacts();
+void freeContacts();
 #endif

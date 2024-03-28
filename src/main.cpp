@@ -2,6 +2,7 @@
 
 int main()
 {
+    allocateContacts();
     int choice, empty_slot;
     while (true)
     {
@@ -45,6 +46,6 @@ int main()
             break;
         }
     }
-
+    freeContacts();
     return 0;
 }

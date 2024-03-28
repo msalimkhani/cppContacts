@@ -1,8 +1,18 @@
 #include "../libs/lib.h"
 #include "../libs/contacts.h"
 
-
-
+void allocateContacts()
+{
+    if (l_Contacts == NULL)
+    {
+        l_Contacts = (Contact *) malloc(sizeof(Contact) * SIZE);
+    }
+    
+}
+void freeContacts()
+{
+    free(l_Contacts);
+}
 void delete_contact()
 {
     system("cls");
@@ -66,16 +76,20 @@ void show_contacts()
 
 void add_contact(int i)
 {
+    Contact contact;
     system("cls");
     cin.ignore();
     cout << "Please enter the first name: ";
-    getline(cin, l_Contacts[i].f_name);
+    //scanf("%s", contact->f_name);
+    getline(cin, contact.f_name);
 
     cout << "Please enter the last name: ";
-    getline(cin, l_Contacts[i].l_name);
+    getline(cin, contact.l_name);
 
     cout << "Please enter the phone number: ";
-    cin >> l_Contacts[i].phone;
+    cin >> contact.phone;
+    l_Contacts[i] = contact;
+    //free(contact);
 }
 
 void edit_contact()

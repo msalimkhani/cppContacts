@@ -7,6 +7,6 @@ typedef struct _contacts
     string f_name;
     string l_name;
     int phone = 0;
-} Contacts;
-Contacts l_Contacts[SIZE];
+} Contact;
+Contact *l_Contacts = NULL;
 #endif
