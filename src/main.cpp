@@ -4,13 +4,16 @@
 #if __has_include("<conio.h>")
 #include <conio.h>
 #endif
-#define SIZE 20
+using namespace std;
+
 /**
  * Error Codes:
 */
 #define EXT_ERR_COLOR_INVALID 1
-
-using namespace std;
+/**
+ * END-Error Codes:
+*/
+#define SIZE 20
 typedef struct _contacts
 {
     string f_name;
@@ -19,7 +22,9 @@ typedef struct _contacts
 } Contact;
 Contact *l_Contacts = NULL;
 typedef enum {Default ,Black, Red, Green} Color;
-
+/**
+ * Function ProtoType definitions
+*/
 void delete_contact();
 void search_contact();
 int search_empty_slot();
@@ -31,6 +36,9 @@ void allocateContacts();
 void freeContacts();
 void printMessage(string msg, Color color, int newLine);
 string parseColor(Color color);
+/**
+ * End-Function ProtoType definitions
+*/
 int main()
 {
     allocateContacts();
@@ -196,7 +204,7 @@ void edit_contact()
 int menu()
 {
     int choice;
-    system("clear");
+    system("cls");
     cout << endl;
     cout << "1) Add Contact" << endl;
     cout << "2) Delete Contact" << endl;
