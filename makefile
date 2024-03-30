@@ -3,7 +3,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 BUILD_DIR = bin
 OBJS = $(OBJ_DIR)/main.o
-APP = out
+APP = cppContacts
 all:allways build_app
 
 $(OBJ_DIR)/main.o:
